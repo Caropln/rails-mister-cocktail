@@ -10,7 +10,7 @@ class DosesController < ApplicationController
     @dose.cocktail = @cocktail
     @dose.ingredient = Ingredient.find(params[:dose][:ingredient]) unless params[:dose][:ingredient].blank?
     if @dose.save
-      redirect_to cocktail_path(@cocktail)
+      redirect_to cocktail_path(@cocktail.id)
     else
       render :new
     end
